@@ -1,0 +1,108 @@
+<!DOCTYPE html> 
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+
+<head>
+	<meta charset="UTF-8"/> 
+	<title>div et CSS</title>
+	<meta name="author" content="JC Routier"/>
+	<meta name="keywords" content="CSS div"/>
+		
+	<link rel="stylesheet" type="text/css" href="style/style-div.css" title="style juste pour un premier exemple"/>   
+	
+</head>
+
+<body>
+
+<header>
+<h2>Légende</h2>
+<span class="legende sf">
+	Science-fiction
+</span>
+<span class="legende bd">
+	Bandes-dessinées
+</span>
+<span class="legende fantasy">
+	Fantasy
+</span>
+</header>
+<div class="livres">
+<div class="livre">
+	<div class="couverture"> <img src="livres/dune.jpg"/> </div>
+	<div class="info sf">
+		<div class="titre">Dune</div>
+		<div class="auteurs">
+			<span class="auteur">Frank Herbert</span>
+		</div>
+		<time datetime="1965" class="parution">1965</time>
+	</div>
+</div>
+
+<div class="livre">
+	<div class="couverture"> <img src="livres/tony-chu.jpg"/> </div>
+	<div class="bd info">
+		<div class="titre">Goût décès</div>
+		<div class="serie">Tony Chu - Détective Cannibale</div>
+		<div class="auteurs">
+			<span class="auteur">John Layman</span> -
+			<span class="auteur">Rob Guillory</span>
+		</div>
+		<time datetime="2010" class="parution">2010</time>
+	</div>
+</div>
+
+
+<div id="favori" class="livre">
+	<div class="couverture"> <img src="livres/seigneur-des-anneaux.png"/> </div>
+	<div class="info fantasy">
+		<div class="titre">Le seigneur des anneaux</div>
+		<div class="auteurs">
+			<span class="auteur">JRR Tolkien</span>
+		</div>
+		<time datetime="1954"  class="parution">1954</time>
+	</div>
+</div>
+
+<div class="livre">
+	<div class="couverture"> <img src="livres/fils-des-brumes.jpg"/> </div>
+	<div class="fantasy info">
+		<div class="titre">L'empire ultime</div>
+		<div class="serie">Fils des brumes</div>
+		<div class="auteurs">
+			<span class="auteur">Brandon Sanderson</span>
+		</div>
+		<time datetime="2006" class="parution">2006</time>
+	</div>
+</div>
+
+
+
+<div class="livre">
+	<div class="couverture"> <img src="livres/scorpion.jpg"/> </div>
+	<div class="info bd">
+		<div class="titre">La marque du diable</div>
+		<div class="serie">Le Scorpion</div>
+		<div class="auteurs">
+			<span class="auteur">Marini</span> - 
+			<span class="auteur">Desberg</span>
+		</div>
+		<time datetime="2000" class="parution">2000</time>
+	</div>
+</div>
+
+<div class="livre">
+	<div class="couverture"> <img src="livres/miles-vorkosigan.jpg"/> </div>
+	<div class="info sf">
+		<div class="titre">Miles Vorkosigan</div>
+		<div class="auteurs">
+			<span class="auteur">Lois McMaster Bujold</span>
+		</div>
+		<time datetime="1986" class="parution">1986</time>
+	</div>
+</div>
+
+</div>
+
+</body>
+
+</html>
