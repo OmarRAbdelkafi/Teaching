@@ -1,0 +1,68 @@
+Lunix-ubunto
+
+$ sudo apt install postgresql postgresql-contrib
+
+$ sudo -u postgres psql
+postgres=# ALTER USER postgres PASSWORD 'root';
+postgres=# \q
+
+//ici il faut utiliser le mdp 'root'
+$ psql -U postgres -h localhost
+
+
+//pour lister les database avec le user postgres
+postgres=# \l
+
+//lister les user et leur role
+postgres=# \du
+
+//creer un nouveau user avec les droit creation de DB
+postgres=# CREATE USER omar WITH CREATEDB LOGIN ENCRYPTED PASSWORD 'admin';
+postgres=# CREATE DATABASE omar;
+postgres=# CREATE DATABASE pythonTest;
+postgres=# GRANT ALL PRIVILEGES ON DATABASE pythonTest TO omar;
+
+//ici il faut utiliser le mdp 'admin'
+$ psql -U omar -h localhost
+
+
+--------------------------------
+PGADMIN pour l'interface graphique :
+
+#
+# Setup the repository
+#
+
+# Install the public key for the repository (if not done previously):
+sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+# Create the repository configuration file:
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+#
+# Install pgAdmin
+#
+
+# Install for both desktop and web modes:
+sudo apt install pgadmin4
+
+# Configure the webserver:
+sudo /usr/pgadmin4/bin/setup-web.sh
+
+//une fois fais on peu lancer http://127.0.0.1/pgadmin4
+
+
+------------------------------
+
+LANCER L'interface graphique via ubunto (pgadmin)
+mdp choisie au départ : 'master'
+
+Le serveur est automatiquement lancer sur : http://127.0.0.1:37945/browser/
+
+-----------------------------
+
+Add a new server pour creer notre seveur
+allez à connection pour mettre le mdp et localhost comme nom, on devrait retrouver les database du owner postgres
+
+----------------------------
+Sur l'interface graphique on selectionne la base et on fait tools query_tool
